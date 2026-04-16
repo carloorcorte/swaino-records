@@ -28,3 +28,19 @@ resource "vercel_project" "swaino_records" {
     deployment_type = "none"
   }
 }
+
+# Ambiente develop — protetto da Vercel auth (solo team)
+resource "vercel_project_environment_variable" "develop_env" {
+  project_id = vercel_project.swaino_records.id
+  key        = "NEXT_PUBLIC_ENV"
+  value      = "develop"
+  target     = ["preview"]
+  git_branch = var.develop_branch
+}
+
+resource "vercel_project_environment_variable" "production_env" {
+  project_id = vercel_project.swaino_records.id
+  key        = "NEXT_PUBLIC_ENV"
+  value      = "production"
+  target     = ["production"]
+}
