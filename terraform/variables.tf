@@ -9,3 +9,9 @@ variable "github_repo" {
   type        = string
   default     = "carloorcorte/swaino-records"
 }
+
+variable "develop_branch" {
+  description = "Branch di staging collegato all'ambiente develop su Vercel"
+  type        = string
+  default     = "develop"
+}
