@@ -36,6 +36,15 @@ yarn-error.log*
 # vercel
 .vercel
 
+# terraform
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.backup
+terraform/.terraform.lock.hcl
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# playwright mcp
+.playwright-mcp/

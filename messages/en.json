@@ -1,0 +1,33 @@
+{
+  "nav": {
+    "releases": "Releases",
+    "marketplace": "Marketplace",
+    "contatti": "Contact"
+  },
+  "landing": {
+    "eyebrow": "Independent record label",
+    "title": "Swaino Records",
+    "subtitle": "Authentic music, independent production.",
+    "cta_primary": "Meet the artists",
+    "cta_secondary": "Latest releases"
+  },
+  "releases": {
+    "title": "Releases",
+    "subtitle": "The official Swaino Records catalog.",
+    "empty": "Catalog coming soon."
+  },
+  "marketplace": {
+    "title": "Marketplace",
+    "subtitle": "Coming soon.",
+    "coming_soon": "We're preparing something special. Check back soon.",
+    "notify_label": "Notify me at launch"
+  },
+  "contatti": {
+    "title": "Contact",
+    "subtitle": "Collaborations, licensing, booking.",
+    "email_label": "Reach us at"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

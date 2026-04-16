@@ -1,0 +1,8 @@
+# Copia questo file in terraform.tfvars e personalizza i valori
+# terraform.tfvars è già nel .gitignore
+
+project_name = "swaino-records"
+github_repo  = "carloorcorte/swaino-records"
+
+# Esporta il token prima di eseguire terraform:
+# export VERCEL_API_TOKEN="xxx"

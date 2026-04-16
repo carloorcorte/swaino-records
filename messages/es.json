@@ -1,0 +1,33 @@
+{
+  "nav": {
+    "releases": "Lanzamientos",
+    "marketplace": "Marketplace",
+    "contatti": "Contacto"
+  },
+  "landing": {
+    "eyebrow": "Sello discográfico independiente",
+    "title": "Swaino Records",
+    "subtitle": "Música auténtica, producción independiente.",
+    "cta_primary": "Conoce los artistas",
+    "cta_secondary": "Últimos lanzamientos"
+  },
+  "releases": {
+    "title": "Lanzamientos",
+    "subtitle": "El catálogo oficial de Swaino Records.",
+    "empty": "El catálogo está en camino."
+  },
+  "marketplace": {
+    "title": "Marketplace",
+    "subtitle": "Próximamente.",
+    "coming_soon": "Estamos preparando algo especial. Vuelve pronto.",
+    "notify_label": "Avísame en el lanzamiento"
+  },
+  "contatti": {
+    "title": "Contacto",
+    "subtitle": "Colaboraciones, licencias, booking.",
+    "email_label": "Escríbenos a"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados."
+  }
+}
