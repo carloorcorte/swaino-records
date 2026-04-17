@@ -23,7 +23,7 @@ export default function ContattiPage() {
         {t("intro")}
       </p>
       <p className="mt-1 text-sm" style={{ color: "var(--text-dim)" }}>
-        {t("response_time")}
+        {t("response_time")}!
       </p>
 
       <ContactForm />
