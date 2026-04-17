@@ -52,7 +52,7 @@ resource "vercel_project_environment_variable" "sanity_project_id_preview" {
   key        = "NEXT_PUBLIC_SANITY_PROJECT_ID"
   value      = var.sanity_project_id
   target     = ["preview"]
-  git_branch = var.develop_branch
+  # Nessun git_branch: disponibile su TUTTI i branch preview
 }
 
 resource "vercel_project_environment_variable" "sanity_dataset_preview" {
@@ -60,7 +60,7 @@ resource "vercel_project_environment_variable" "sanity_dataset_preview" {
   key        = "NEXT_PUBLIC_SANITY_DATASET"
   value      = var.sanity_dataset
   target     = ["preview"]
-  git_branch = var.develop_branch
+  # Nessun git_branch: disponibile su TUTTI i branch preview
 }
 
 resource "vercel_project_environment_variable" "sanity_project_id_production" {
