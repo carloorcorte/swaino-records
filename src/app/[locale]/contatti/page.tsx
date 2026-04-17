@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = { title: "Contatti" };
 
@@ -18,18 +19,14 @@ export default function ContattiPage() {
         {t("subtitle")}
       </p>
 
-      <div className="mt-10">
-        <p className="text-sm" style={{ color: "var(--text-dim)" }}>
-          {t("email_label")}
-        </p>
-        <a
-          href="mailto:info@swainorecords.com"
-          className="mt-2 inline-block text-lg font-medium transition-colors"
-          style={{ color: "var(--text-primary)" }}
-        >
-          info@swainorecords.com
-        </a>
-      </div>
+      <p className="mt-4 text-sm" style={{ color: "var(--text-dim)" }}>
+        {t("intro")}
+      </p>
+      <p className="mt-1 text-sm" style={{ color: "var(--text-dim)" }}>
+        {t("response_time")}
+      </p>
+
+      <ContactForm />
     </div>
   );
 }

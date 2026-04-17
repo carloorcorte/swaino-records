@@ -44,3 +44,58 @@ resource "vercel_project_environment_variable" "production_env" {
   value      = "production"
   target     = ["production"]
 }
+
+# ─── Contact form — develop (preview) ───────────────────────────
+
+resource "vercel_project_environment_variable" "contact_email_preview" {
+  project_id = vercel_project.swaino_records.id
+  key        = "CONTACT_EMAIL"
+  value      = var.contact_email
+  target     = ["preview"]
+  git_branch = var.develop_branch
+  sensitive  = false
+}
+
+resource "vercel_project_environment_variable" "resend_api_key_preview" {
+  project_id = vercel_project.swaino_records.id
+  key        = "RESEND_API_KEY"
+  value      = var.resend_api_key
+  target     = ["preview"]
+  git_branch = var.develop_branch
+  sensitive  = true
+}
+
+resource "vercel_project_environment_variable" "resend_from_email_preview" {
+  project_id = vercel_project.swaino_records.id
+  key        = "RESEND_FROM_EMAIL"
+  value      = "onboarding@resend.dev"
+  target     = ["preview"]
+  git_branch = var.develop_branch
+  sensitive  = false
+}
+
+# ─── Contact form — production ───────────────────────────────────
+
+resource "vercel_project_environment_variable" "contact_email_production" {
+  project_id = vercel_project.swaino_records.id
+  key        = "CONTACT_EMAIL"
+  value      = var.contact_email
+  target     = ["production"]
+  sensitive  = false
+}
+
+resource "vercel_project_environment_variable" "resend_api_key_production" {
+  project_id = vercel_project.swaino_records.id
+  key        = "RESEND_API_KEY"
+  value      = var.resend_api_key
+  target     = ["production"]
+  sensitive  = true
+}
+
+resource "vercel_project_environment_variable" "resend_from_email_production" {
+  project_id = vercel_project.swaino_records.id
+  key        = "RESEND_FROM_EMAIL"
+  value      = "noreply@swainorecords.com"
+  target     = ["production"]
+  sensitive  = false
+}

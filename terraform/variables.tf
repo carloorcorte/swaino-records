@@ -15,3 +15,15 @@ variable "develop_branch" {
   type        = string
   default     = "develop"
 }
+
+variable "contact_email" {
+  description = "Indirizzo email destinatario del form di contatto"
+  type        = string
+  default     = "hello@swainorecords.com"
+}
+
+variable "resend_api_key" {
+  description = "API key di Resend per l'invio email (sensibile)"
+  type        = string
+  sensitive   = true
+}
