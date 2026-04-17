@@ -11,10 +11,28 @@
     "cta_primary": "Meet the artists",
     "cta_secondary": "Latest releases"
   },
+  "release_detail": {
+    "back": "← Releases",
+    "listen": "Listen",
+    "on_bandcamp": "On Bandcamp",
+    "on_soundcloud": "On SoundCloud",
+    "tracklist": "Tracklist",
+    "not_found": "Release not found."
+  },
   "releases": {
     "title": "Releases",
     "subtitle": "The official Swaino Records catalog.",
-    "empty": "Catalog coming soon."
+    "empty": "Catalog coming soon.",
+    "type_single": "Single",
+    "type_ep": "EP",
+    "type_album": "Album",
+    "listen_on": "Listen on",
+    "bandcamp": "Bandcamp",
+    "soundcloud": "SoundCloud",
+    "filter_all": "All",
+    "filter_single": "Singles",
+    "filter_ep": "EP",
+    "filter_album": "Albums"
   },
   "marketplace": {
     "title": "Marketplace",
