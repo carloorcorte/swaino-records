@@ -16,6 +16,18 @@ variable "develop_branch" {
   default     = "develop"
 }
 
+variable "sanity_project_id" {
+  description = "Sanity project ID (NEXT_PUBLIC_SANITY_PROJECT_ID)"
+  type        = string
+  default     = "rrobjg6q"
+}
+
+variable "sanity_dataset" {
+  description = "Sanity dataset (NEXT_PUBLIC_SANITY_DATASET)"
+  type        = string
+  default     = "production"
+}
+
 variable "contact_email" {
   description = "Indirizzo email destinatario del form di contatto"
   type        = string

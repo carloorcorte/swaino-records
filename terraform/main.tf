@@ -45,6 +45,38 @@ resource "vercel_project_environment_variable" "production_env" {
   target     = ["production"]
 }
 
+# ─── Sanity CMS ─────────────────────────────────────────────────
+
+resource "vercel_project_environment_variable" "sanity_project_id_preview" {
+  project_id = vercel_project.swaino_records.id
+  key        = "NEXT_PUBLIC_SANITY_PROJECT_ID"
+  value      = var.sanity_project_id
+  target     = ["preview"]
+  git_branch = var.develop_branch
+}
+
+resource "vercel_project_environment_variable" "sanity_dataset_preview" {
+  project_id = vercel_project.swaino_records.id
+  key        = "NEXT_PUBLIC_SANITY_DATASET"
+  value      = var.sanity_dataset
+  target     = ["preview"]
+  git_branch = var.develop_branch
+}
+
+resource "vercel_project_environment_variable" "sanity_project_id_production" {
+  project_id = vercel_project.swaino_records.id
+  key        = "NEXT_PUBLIC_SANITY_PROJECT_ID"
+  value      = var.sanity_project_id
+  target     = ["production"]
+}
+
+resource "vercel_project_environment_variable" "sanity_dataset_production" {
+  project_id = vercel_project.swaino_records.id
+  key        = "NEXT_PUBLIC_SANITY_DATASET"
+  value      = var.sanity_dataset
+  target     = ["production"]
+}
+
 # ─── Contact form — develop (preview) ───────────────────────────
 
 resource "vercel_project_environment_variable" "contact_email_preview" {
