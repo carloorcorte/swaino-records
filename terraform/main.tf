@@ -100,7 +100,7 @@ resource "vercel_project_environment_variable" "resend_api_key_preview" {
 resource "vercel_project_environment_variable" "resend_from_email_preview" {
   project_id = vercel_project.swaino_records.id
   key        = "RESEND_FROM_EMAIL"
-  value      = "onboarding@resend.dev"
+  value      = "noreply@swainorecords.com"
   target     = ["preview"]
   git_branch = var.develop_branch
   sensitive  = false
