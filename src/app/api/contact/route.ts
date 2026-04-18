@@ -8,38 +8,17 @@ import {
   hasSuspiciousPatterns,
   validateEnvVars,
 } from "@/lib/security/validation";
+import {
+  buildContactSubject,
+  buildContactEmailText,
+} from "@/lib/email/templates/contact";
 
 const CONTACT_EMAIL = process.env.CONTACT_EMAIL ?? "hello@swainorecords.com";
 const FROM_EMAIL =
-  process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev";
+  process.env.RESEND_FROM_EMAIL ?? "noreply@swainorecords.com";
 
 // Maximum JSON payload size (100KB)
 const MAX_PAYLOAD_SIZE = 100 * 1024;
-
-function subjectByType(type: string, name: string): string {
-  const labels: Record<string, string> = {
-    demo: "Demo Submission",
-    press: "Press / Media",
-    booking: "Booking",
-    other: "Altro",
-  };
-  return `[${labels[type] ?? type}] da ${name}`;
-}
-
-function buildEmailText(data: ReturnType<typeof contactSchema.parse>): string {
-  const lines = [
-    `Da: ${data.name} <${data.email}>`,
-    `Tipo: ${data.type}`,
-    "",
-  ];
-  if (data.streamingUrl) lines.push(`Link streaming: ${data.streamingUrl}`);
-  if (data.genre) lines.push(`Genere: ${data.genre}`);
-  if (data.publication) lines.push(`Testata: ${data.publication}`);
-  if (data.pressType) lines.push(`Tipo press: ${data.pressType}`);
-  if (data.eventDate) lines.push(`Data evento: ${data.eventDate}`);
-  lines.push("", "Messaggio:", data.message);
-  return lines.join("\n");
-}
 
 /**
  * POST /api/contact
@@ -165,8 +144,8 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     const emailResult = await resend.emails.send({
       from: FROM_EMAIL,
       to: CONTACT_EMAIL,
-      subject: subjectByType(result.data.type, result.data.name),
-      text: buildEmailText(result.data),
+      subject: buildContactSubject(result.data.type, result.data.name),
+      text: buildContactEmailText(result.data),
       // Add reply-to for easier response
       replyTo: result.data.email,
     });
